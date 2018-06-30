@@ -35,6 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  cursor: pointer;
 }
 .noteslist-wrapper-with-sidebar{
   display:flex;
@@ -86,6 +87,7 @@ body {
 .login-button{
   width: 100px;
   margin:15px auto;
+  cursor: pointer;
 }
 .register-here{
   margin: 15px auto;

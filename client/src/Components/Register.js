@@ -19,9 +19,9 @@ class Register extends Component {
     //handleClick
 
     handleClick = (e) => {
-        axios.post("http://localhost:5555/login", this.state)
+        axios.post("http://localhost:5555/api/user/register", this.state)
             .then(response => {
-                localStorage.setItem("jwt");
+                localStorage.setItem("jwt", response.data.token);
                 this.props.history.push("/notes");
             })
     }
