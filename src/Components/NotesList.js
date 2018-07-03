@@ -20,7 +20,7 @@ class NotesList extends Component {
     
     //need to set token on localStorage in order for this to work - this is done on log-in
     componentDidMount(){
-        let promise = axios.get("http://localhost:5555/api/notes", requestOptions);
+        let promise = axios.get("https://notepensesame.herokuapp.com/notes", requestOptions);
         promise
             .then(response => {
                 this.setState(response.data)

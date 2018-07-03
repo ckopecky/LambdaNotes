@@ -19,7 +19,7 @@ class Register extends Component {
     //handleClick
 
     handleClick = (e) => {
-        axios.post("http://localhost:5555/api/user/register", this.state)
+        axios.post("https://notepensesame.herokuapp.com/api/user/register", this.state)
             .then(response => {
                 localStorage.setItem("jwt", response.data.token);
                 this.props.history.push("/notes");
