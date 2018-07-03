@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import IndivNote from './IndivNote';
 import { Link } from 'react-router-dom';
+import { Modal, ModalHeader, ModalBody, Button } from 'reactstrap';
 
 class SingleNoteView extends Component {
     constructor(props) {
         super(props);
         this.state ={
-            note: this.props.location.state
+            note: this.props.location.state,
+            modal: false
         }
+
+        this.toggle = this.toggle.bind(this);
     }
     
-
+    toggle() {
+        this.setState({modal: !this.state.modal})
+    }
     
 
     render() {
@@ -30,10 +36,23 @@ class SingleNoteView extends Component {
                               >
                             Edit
                         </Link>
+                    </div> {/*line 29*/}
+                    <div className="nav" onClick={this.toggle}>Delete</div>
+                    {/* //Modal content here} */}
+                    <div className="modal-overlay" onClick={this.toggle}>
+                    <Modal isOpen={this.state.modal} className="delete-modal hidden" onClick={this.toggle}>
+                            <ModalHeader onClick={this.toggle}>Are you sure?</ModalHeader>
+                            <ModalBody>
+                            <p>Are you sure you want to delete this note?</p>
+                            <div className="modal-buttons">
+                                <Button className="edit-view-button red" onClick={this.toggle}>Delete</Button>
+                                <Button className="edit-view-button teal" onClick={this.toggle}>Cancel</Button>
+                            </div>
+                            </ModalBody>
+                    </Modal>
                     </div>
-                    <div className="nav">Delete</div>
                     <div className="nav">Log Out</div>
-                </div>
+                </div> {/*end single note nav bar */}
                 <IndivNote 
                     note_title={this.state.note.note_title}
                     note_body={this.state.note.note_body}
