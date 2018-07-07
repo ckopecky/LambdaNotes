@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ckopecky.github.io/back-end-project-week/",
+  "homepage": "https://ckopecky.github.io/LambdaNotes/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^1.2.0",
@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   }
 }
